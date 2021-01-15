@@ -1,0 +1,207 @@
+{% extends "base.html" %}
+{% load static %}
+
+  <!-- Title -->
+  {% block title %}LC Quality Dental{% endblock %}
+
+{% block content %}
+
+<!-- Bootstrap 4 -->
+{#<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">#}
+{#<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>#}
+{#<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>#}
+{#<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>#}
+{##}
+{#<!-- Font Awesome -->#}
+{#  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">#}
+{##}
+{#<!-- Moment.js -->#}
+{#  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js" integrity="sha256-VBLiveTKyUZMEzJd6z2mhfxIqz3ZATCuVMawPZGzIfA=" crossorigin="anonymous"></script>#}
+{##}
+{#<!-- Tempus Dominus Bootstrap 4 -->#}
+{#  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/css/tempusdominus-bootstrap-4.min.css" integrity="sha256-XPTBwC3SBoWHSmKasAk01c08M6sIA5gF5+sRxqak2Qs=" crossorigin="anonymous" />#}
+{#  <script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/js/tempusdominus-bootstrap-4.min.js" integrity="sha256-z0oKYg6xiLq3yJGsp/LsY9XykbweQlHl42jHv2XTBz4=" crossorigin="anonymous"></script>#}
+{##}
+
+<!-- ***** Message Area Start ***** -->
+  {% if fname %}
+    <center><h3>Thanks, {{ fname }}!</h3>
+        <br/>
+    We received your email and will contact you shortly...</center><br/><br/><br/>
+  {% endif %}
+<!-- ***** Message Area End ***** -->
+
+
+<!-- Book An Oppointment Area Start  -->
+  <section class="book-an-oppointment-area section-padding-100 bg-img bg-gradient-overlay jarallax clearfix" style="background-image: url('{% static 'website/img/bg-img/12.jpg' %}');">
+    <div class="container">
+
+      <div class="row">
+        <!-- Section Heading -->
+        <div class="col-12">
+          <div class="section-heading text-center white">
+            <h2>Book An Apointment</h2>
+{#            <div class="line"></div>#}
+          </div>
+        </div>
+      </div>
+
+        <!-- below is temporarily resume for testing  -->
+        <!-- Book An Oppointment Area Start  -->
+
+{##}
+{#      <div class="row">#}
+{#        <div class="col-12">#}
+{#          <!-- Appointment Form -->#}
+{#          <div class="appointment-form">#}
+{#            <form action="{% url 'testing_appointment' %}" method="POST">#}
+{#                {% csrf_token %}#}
+{#              <div class="row">#}
+{#                <div class="col-md-3">#}
+{#                  <div class="form-group mb-30">#}
+{#                    <input type="text" name="fname" class="form-control" placeholder="Enter Your First Name" required>#}
+{#                  </div>#}
+{#                </div>#}
+{#                <div class="col-md-3">#}
+{#                  <div class="form-group mb-30">#}
+{#                    <input type="text" name="lname" class="form-control" placeholder="Enter Your Last Name" required>#}
+{#                  </div>#}
+{#                </div>#}
+{#                <div class="col-md-3">#}
+{#                  <div class="form-group mb-30">#}
+{#                    <input type="date" name="appointment_date" class="form-control" placeholder="Your Appointment Date" required autocomplete="off">#}
+{#                  </div>#}
+{#                </div>#}
+{#                <div class="col-md-3">#}
+{#                  <div class="form-group mb-30">#}
+{#                    <input type="time" name="appointment_time" class="form-control" placeholder="Your Appointment Time" required autocomplete="off">#}
+{#                  </div>#}
+{#                </div>#}
+{#                <br/>#}
+{#                <br/>#}
+{#                <hr>#}
+{#                <div class="col-12 text-center">#}
+{#                    <button type="submit" class="btn btn-success">Booking Now</button>#}
+{#                </div>#}
+{##}
+{##}
+{#              </div>#}
+{#            </form>#}
+{#          </div>#}
+{#        </div>#}
+{#      </div>#}
+
+        <!-- above is temporarily resume for testing  -->
+        <!-- above is temporarily resume for testing  -->
+
+    </div>
+  </section>
+<!-- Book An Oppointment Area End -->
+<br/>
+
+
+
+{#<!-- ***** Testing_Booking_Form Area Start @2021 0110  ***** -->#}
+    {# commented @ 20201210 for successfully finishing testing jobs #}
+
+<div class="container">
+<form method="POST" action="{% url 'booking_appointment' %}">
+{% csrf_token %}
+  <div class="row">
+    <div class="col-md-3">
+      <div class="form-group mb-30">
+        <input type="text" name="fname" class="form-control" placeholder="Your First Name" required>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-group mb-30">
+        <input type="text" name="lname" class="form-control" placeholder="Your Last Name" required>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-group mb-30">
+        <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-group mb-30">
+        <input type="text" name="phone" class="form-control" minlength="12" placeholder="Format: e.g. 800-800-8888" required>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-group mb-30">
+        <input type="date" name="appointment_date" class="form-control" placeholder="Your Appointment Date" required autocomplete="off">
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-group mb-30">
+        <input type="time" name="appointment_time" class="form-control" placeholder="Your Appointment Time" required autocomplete="off">
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-group mb-30">
+        <select name="clinic_prefer" class="form-control">
+          <option value="--The Clinic You Prefer--">--The Clinic You Prefer--</option>
+          <option value="Princeton">4499 Rt 27,Princeton</option>
+          <option value="North_Brunswick">2000 Rt 27,Suite B,North Brunswick</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-group mb-30">
+        <select name="channel" class="form-control">
+          <option value="--Channel You Find Us--">--Channel You Find Us--</option>
+          <option value="referred_by_friends">referred_by_friends</option>
+          <option value="Insurance_network">Insurance_network</option>
+          <option value="Newspaper">Newspaper</option>
+          <option value="Internet">Internet</option>
+          <option value="Wechat">Wechat</option>
+          <option value="Treated_by_Dr_Chen_before">Treated_by_Dr_Chen_before</option>
+          <option value="Others">Others</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="form-group mb-30">
+        <textarea name="message_body" class="form-control" placeholder="Your Message"></textarea>
+      </div>
+    </div>
+
+{#    <div class="col-md-6">#}
+{#    <div class="input-group date" id="datetimepicker1" data-target-input="nearest">#}
+{#      <input type="date" name="appointment_datetime" class="form-control datetimepicker-input" data-target="#datetimepicker1"/>#}
+{#      <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">#}
+{#        <div class="input-group-text"><i class="fa fa-calendar"></i></div>#}
+{#      </div>#}
+{#    </div>#}
+{#    </div>#}
+
+{#    <script>#}
+{#      $(function () {#}
+{#        $("#datetimepicker1").datetimepicker();#}
+{#      });#}
+{#    </script>#}
+  <div class="form-check">
+    <input type="checkbox" name="is_signed" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">I allow LC Quality Dental to contact me via Email or Call</label>
+    <div class="wpb_wrapper">
+        <p><span style="font-size: 10pt;"><span style="color: #ff0000;">*</span>Your personal appointment coordinator will call you back to confirm your preferred appointment date and time.</span></p>
+
+    </div>
+  </div>
+    <br/>
+    <br/>
+    <hr>
+    <div class="col-12 text-center">
+        <button type="submit" class="btn btn-success">Booking Now</button>
+    </div>
+  </div>
+
+</form>
+</div>
+
+<br/>
+
+{#<!-- ***** Testing_Booking_Form Area End @2021 0110 ***** -->#}
+
+{% endblock %}
